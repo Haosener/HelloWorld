@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+ 	function fn1(){
+		alert("按钮1触发："+this);
+	}
+ 	onload = function(){
+ 		btn2.onclick = function(){
+ 			alert("按钮2触发："+this);
+ 		}
+ 	}
+</script>
+</head>
+<body>
+<input type="button" value="按钮1" onclick="fn1()">
+<input type="button" value="按钮2" id="btn2">
+</body>
+</html>

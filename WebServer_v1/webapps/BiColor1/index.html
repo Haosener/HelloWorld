@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Mybar-Haosener</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="keywords" content="Mybar">
+<meta name="description" content="Mybar">
+<script type="text/javascript">
+	
+window.onload=function () {
+    var hitokoto = document.querySelector('.hitokoto');
+    var from = document.querySelector('.from');
+    update();
+    function update() {
+        gethi = new XMLHttpRequest();
+        gethi.open("GET","https://sslapi.hitokoto.cn/?c=a");
+        //这里选择类别，详见官方文档
+        gethi.send();
+        gethi.onreadystatechange = function () {
+            if (gethi.readyState===4 && gethi.status===200) {
+                var Hi = JSON.parse(gethi.responseText);
+                hitokoto.innerHTML = Hi.hitokoto;
+                from.innerHTML = "--<b>" + Hi.from + "</b>"; //可自定义输出格式
+            }
+        }
+    }
+}
+
+
+</script>
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="pc.css" rel="stylesheet" type="text/css" media="screen and (min-width:769px)">
+<link href="mb.css" rel="stylesheet" type="text/css" media="screen and (max-width:480px)">
+<link rel="stylesheet" href="https://cdn.webfont.youziku.com/webfonts/nomal/128084/47844/5c83cf49f629d806a46ebcba.css">
+<link rel="stylesheet" href="https://cdn.webfont.youziku.com/webfonts/nomal/128084/28621/5c844ee0f629d804346ff9ed.css">
+<link rel="stylesheet" href="app.css">
+<!--[if lt IE 9]>
+<script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link href="favicon.ico" rel="shortcut icon">
+</head>
+<body class="start" id="body">
+<div id="awd-site-wrap" class="bg bg-home">
+	<div id="bg">
+		<div id="overlay">
+			<div class="awd-site-bg bg-home active" style="left:735px;top:15px">
+			</div>
+			<div class="awd-site-bg bg-subscribe" style="left:816px;top:15px">
+			</div>
+			<div class="awd-site-bg bg-about">
+			</div>
+			<div class="awd-site-bg bg-contact">
+			</div>
+			<div class="awd-site-bg bg-services">
+			</div>
+		</div>
+		<canvas id="awd-site-canvas" width="1203" height="890"></canvas>
+	</div>
+	<header id="awd-site-header">
+	<div id="awd-site-logo" class="animated fadeInDown visible" data-animation="fadeInDown" data-animation-delay="500">
+		<h1 style="font-family:'AaFangmeng18080afd9a1f454';    font-size: 42px;margin-top: 6px;"><a class="go-slide" data-slide="home">MyBar</a></h1>
+	</div>
+	<button class="menu-toggle animated fadeInDown visible" data-animation="fadeInDown" data-animation-delay="500" data-role="toggle"><span></span><span></span><span></span></button><nav id="awd-site-nav" class="navigation animated fadeInDown visible" data-animation="fadeInDown" data-animation-delay="500">
+	<div class="nav-container">
+		<ul>
+			<li><a href="" data-slide="home" class="active">首页</a></li>
+			<li><a href="" data-slide="subscribe" class="">MyBar</a></li>
+			<li><a href="" data-slide="about">活动</a></li>
+			<li><a href="" data-slide="services">其他</a></li>
+			<li><a href="" data-slide="contact">联系</a></li>
+		</ul>
+	</div>
+	<p class="mbbq" id="zt" style="margin-top: -100px;font-family:'Jackey_HandWrite';font-size: 32px;">©MyBar 2019 版权所有</p>
+	</nav></header><main id="awd-site-main"><section id="awd-site-content">
+	<div class="sections-block ps-container" data-ps-id="0048d35c-c355-f2d9-50fd-ee4ed9e0992c">
+		<div class="slides">
+			<div class="slides-wrap">
+				<div class="slide-item active" data-slide-id="home">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="slide-content">
+
+									<div class="row">
+								<!-- 这里调用一言api -->
+										<div class="col-lg-6 col-md-6 svm">
+								<div>   
+   									<p class="hitokoto"></p> 
+  							  		<p class="from"></p> 
+								</div>
+										</div>
+										<div class="col-lg-5 col-lg-offset-1 col-md-6 svm">
+											<div class="section-info text-right">
+												
+												<a href="" class="btn go-slide animated fadeIn visible" data-animation="fadeIn" data-animation-delay="60" data-slide="about">福利</a>
+                                          &nbsp;
+                                              <a href="" class="btn go-slide animated fadeIn visible" data-animation="fadeIn" data-animation-delay="60" data-slide="subscribe">麦吧</a>
+                                          
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="slide-item" data-slide-id="subscribe">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="slide-content">
+									<div class="row">
+										<div class="col-lg-5 col-lg-offset-2 col-md-6 col-md-offset-1 col-md-push-5 svm">
+											<div class="section-info text-right">
+												<h2 class="section-title text-default animated" data-animation="fadeIn" data-animation-delay="60">关注<br>
+												公众号</h2>
+												<p class="animated" data-animation="fadeIn" data-animation-delay="100">
+													到店 <strong>即可</strong><br>
+													领取<br>
+													福利
+												</p>
+											</div>
+										</div>
+										<div class="col-md-5 col-md-pull-7 svm">
+											<div class="section-info text-left">
+												<p>
+													<strong>扫码</strong>加好友，从此<strong>高潮</strong>不用手
+												</p>
+												<div class="row">
+													<img alt="QR" src="../img/QR.png">
+													<!-- <div class="col-md-12 col-md-offset-0 col-sm-8 col-sm-offset-2">
+														<form id="subscribe-form" class="subscribe-form" method="post" novalidate>
+															<input type="email" id="subscribe-email" name="EMAIL" placeholder="文字"><button type="submit" id="subscribe-submit" class="btn btn-inverse"><span>文字</span><i class="fa fa-envelope"></i></button>
+															<div class="form-notice subscribe-notice">
+															</div>
+														</form>  邮箱订阅
+													</div> -->
+													
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="slide-item" data-slide-id="about">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="slide-content">
+									<div class="row">
+										<div class="col-lg-5 col-lg-offset-2 col-md-6 col-md-offset-1 col-md-push-5 svm">
+											<div class="section-info text-right">
+												<h2 class="section-title text-default animated" data-animation="fadeIn" data-animation-delay="60">活动</h2>
+												<p class="animated" data-animation="fadeIn" data-animation-delay="100">
+													这里是活动界面
+												</p>
+											</div>
+										</div>
+										<div class="col-md-5 col-md-pull-7 svm">
+											<div class="section-info text-left">
+												<div class="features-list">
+													<div class="featured-item animated" data-animation="fadeIn" data-animation-delay="150">
+														<div class="featured-text">
+															<h3><i class="fa fa-rocket"></i> 但是</h3>
+															<p>
+																暂时没有活动
+															</p>
+														</div>
+													</div>
+													<div class="featured-item">
+														<div class="featured-item animated" data-animation="fadeIn" data-animation-delay="150">
+															<div class="featured-text">
+																<h3><i class="icon-paint"></i> load</h3>
+																<p>
+																	...
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="slide-item" data-slide-id="services">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="slide-content">
+									<div class="row">
+										<div class="col-lg-5 col-lg-offset-2 col-md-6 col-md-offset-1 col-md-push-5 svm">
+											<div class="section-info text-right">
+												<h2 class="section-title text-default animated" data-animation="fadeIn">这是广告位！</h2>
+												<p class="animated" data-animation="fadeIn" data-animation-delay="100">
+													<a href="http://blog.mybar1.cn/">Blog</a>
+												</p>
+												<h2 class="section-title text-default animated fadeIn visible" data-animation="fadeIn" data-animation-delay="50">来自一个有趣的灵魂<br></h2>
+
+												
+												<p class="animated fadeIn visible" data-animation="fadeIn" data-animation-delay="55">
+													当然我也拥有有趣的肉体<br>
+													..
+												</p>
+											</div>
+										</div>
+										<!-- <div class="col-md-5 col-md-pull-7 svm">
+											<div class="section-info text-left">
+												<div class="service animated" data-animation="fadeIn" data-animation-delay="150">
+													<h3>交流</h3>
+													<p>
+														
+													</p>
+												</div>
+												<div class="service animated" data-animation="fadeIn" data-animation-delay="150">
+													<h3> </h3>
+													<p>
+															
+													</p>
+												
+												</div>
+											</div>
+										</div> -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="slide-item" data-slide-id="contact">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="slide-content">
+									<div class="row">
+										<div class="col-lg-5 col-lg-offset-1 col-md-6 col-md-push-6 svm">
+											<div class="section-info text-right">
+												<h2 class="section-title text-default animated" data-animation="fadeIn">联系我们</h2>
+												<div class="contact-info">
+													<p class="contact-item">
+														<i class="fa fa-qq"></i> 2575718277
+													</p>
+													<p class="contact-item">
+														<i class="fa fa-envelope"></i> <a href="mailto:haosener1@gmail.com" title="Send an email">haosener1@gmail.com</a>
+													</p>
+													<p class="contact-item">
+														<i class="fa fa-map-marker"></i> 现代管理大学.麦吧
+													</p>
+												</div>
+												<p class="animated" data-animation="fadeIn" data-animation-delay="100">
+												</p>
+												<h3>网站正在建设</h3>
+												<h5>Loading...</h5>
+												<p>
+												</p>
+											</div>
+										</div>
+										<div class="col-lg-6 col-md-6 col-md-pull-6 svm">
+											<div class="section-info text-left"  id="zt">
+												<form id="contact-form" class="contact-form"  id="zt">
+													<!-- <div class="row">
+														<div class="col-lg-4 col-md-6 col-md-12 animated" data-animation="fadeIn" data-animation-delay="200"  id="zt">
+															<input type="text" name="contact-name" placeholder="name" class="contact-form-name required" id="zt">
+														</div>
+														<div class="col-lg-4 col-md-6 col-md-12 animated" data-animation="fadeIn" data-animation-delay="200">
+															<input type="email" name="contact-email" placeholder="email" class="contact-form-email required">
+														</div>
+														<div class="col-lg-4 col-md-12 animated" data-animation="fadeIn" data-animation-delay="200">
+															<input type="text" name="contact-subject" placeholder="subject" class="contact-form-subject required">
+														</div>
+														<div class="col-md-12 animated" data-animation="fadeIn" data-animation-delay="150">
+															<textarea name="contact-message" placeholder="文字..." class="contact-form-message required" rows="4"></textarea><button class="btn btn-block" type="submit" id="submit" name="submit"><span>发送</span><i class="fa fa-send"></i></button>
+														</div>
+													</div> -->
+													<div class="contact-notice">
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ps-scrollbar-x-rail" style="left:0;bottom:3px">
+			<div class="ps-scrollbar-x" style="left:0;width:0">
+			</div>
+		</div>
+		<div class="ps-scrollbar-y-rail" style="top:0;right:3px">
+			<div class="ps-scrollbar-y" style="top:0;height:0">
+			</div>
+		</div>
+	</div>
+	</section></main><footer id="awd-site-footer">
+	<div class="copyright animated fadeInUp visible" data-animation="fadeInUp" data-animation-delay="500">
+		<p class="pcbq" id="zt" style="font-family:'Jackey_HandWrite';font-size: 32px;">©MyBar 2019 Haosen</p>
+	</div>
+	</footer>
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="vendor.js"></script>
+	<script type="text/javascript" src="options.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+</div>
+</body>
+</html>

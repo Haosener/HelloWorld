@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function myfn(){
+		var reg = /^http:/;
+		location.href=reg.test(i1.value)?
+				i1.value:"http://"+i1.value; 
+	}
+</script>
+</head>
+<body>
+<input type="text" id="i1">
+<input type="button" value="GO"
+		 onclick="myfn()">
+</body>
+</html>
+
+
+
+

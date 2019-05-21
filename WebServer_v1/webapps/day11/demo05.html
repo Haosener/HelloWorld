@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div{
+		width: 1000px;
+		height: 1000px;
+		border: 1px solid red;
+	}
+	img{
+		position: absolute;
+	}
+</style>
+<script type="text/javascript">
+	function downfn(){
+		var x = event.clientX;
+		var y = event.clientY;
+		var img = document.createElement("img");
+		img.src="../imgs/2.gif";
+		img.style.left = x+"px";
+		img.style.top = y+"px";
+		document.body.appendChild(img);
+		
+		
+		console.log("鼠标按下x："+x+"-y:"+y);
+	}
+	function upfn(){
+		console.log("鼠标抬起");
+	}
+	function movefn(){
+		console.log("鼠标移动");
+		
+		var x = event.clientX;
+		var y = event.clientY;
+		var img = document.createElement("img");
+		img.src="../imgs/2.gif";
+		img.style.left = x+"px";
+		img.style.top = y+"px";
+		document.body.appendChild(img);
+	}
+</script>
+</head>
+<body>
+<div onmousedown="downfn()" 
+	onmouseup="upfn()" onmousemove="movefn()"></div>
+</body>
+</html>
+
+
+
+

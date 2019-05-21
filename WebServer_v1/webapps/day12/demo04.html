@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("input:first").click(function(){
+			var h = $("<h3>lalala</h3>");
+			//$(document.body).append(h);
+			$(document.body).prepend(h);
+		})
+		$("input:eq(1)").click(function(){
+			var img = $("<img src='../imgs/2.gif'>");
+			//$("#d2").before(img);
+			$("#d2").after(img);
+		});
+		
+		
+		$("input:last").click(function(){
+			$("#d2").remove();
+		});
+	});
+	
+</script>
+</head>
+<body>
+<input type="button" value="添加">
+<input type="button" value="插入">
+<input type="button" value="删除">
+<div>div1</div>
+<div id="d2">div2</div>
+<div>div3</div>
+</body>
+</html>
+
+
+

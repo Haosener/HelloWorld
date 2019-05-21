@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function myfn(){
+		var arr = i1.value.split(i2.value);
+		//遍历数组
+		for (var i=0;i<arr.length;i++){
+			myul.innerHTML+=
+					"<li>"+arr[i]+"</li>";
+		}
+	}
+</script>
+</head>
+<body>
+<input type="text" id="i1">
+<input type="text" id="i2">
+<input type="button" value="添加" 
+		onclick="myfn()">
+<hr>
+<ul id="myul">
+</ul>
+</body>
+</html>
+
+
+

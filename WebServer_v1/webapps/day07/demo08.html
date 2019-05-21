@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+			var number = parseInt(Math.random()*100);
+			console.log(number);
+		function myfn(){
+			var i = document.getElementById("i1");
+			var d = document.getElementById("d1");
+			if(number<i.value){
+				d.innerText = "大了";
+			}else if(number>i.value){
+				d.innerText = "小了";
+			}else{
+				d.innerText = "恭喜！对了";
+			}
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="i1">
+	<input type="button" value="guess" onclick="myfn()">
+	<div id="d1"></div>
+</body>
+</html>

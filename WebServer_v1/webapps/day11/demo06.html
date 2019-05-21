@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	function upfn(){
+		console.log("抬起"
+				+String.fromCharCode(event.keyCode));
+	}
+	function downfn(){`1`
+		console.log("按下"+event.keyCode);
+		if(event.keyCode==13){
+			btn.onclick();
+		}
+	}
+</script>
+</head>
+<body>
+<input type="button" value="按钮"
+ onclick="alert('xxx')" id="btn">  
+<input type="text" onkeydown="downfn()"
+	onkeyup="upfn()"> 
+</body>
+</html>
+
+

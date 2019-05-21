@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var arr = [18,11,26,22,2,7,3];
+	//自定义排序方法
+	function mysort(a,b){
+		return b-a;//代表升序  b-a代表降序
+	}
+	alert(arr.sort(mysort));
+	
+/* 	为什么提供自定义方法排序？ 
+ 	 这样可以支持对数组中存在的任意类型的数据进行排序 
+	Person  name age salary
+	var arr = [p1,p2,p3];
+ 	function mysort(a,b){
+		return b.salary-a.salary;//代表升序  b-a代表降序
+	} */
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

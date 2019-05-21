@@ -1,0 +1,37 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>用户列表</title>
+</head>
+<body>
+	<center>
+		<h1>用户列表</h1>
+		<table border="1">
+			<tr>
+				<td>用户名</td>
+				<td>密码</td>
+				<td>昵称</td>
+				<td>年龄</td>
+			</tr>
+			<tr th:each="user : ${list}">
+				<td th:text="${user.username}">张三</td>
+				<td th:text="${user.password}">123</td>
+				<td th:text="${user.nickname}">张三</td>
+				<td th:text="${user.age}">13</td>
+			</tr>
+			<tr>
+				<td>李四</td>
+				<td>444</td>
+				<td>尼古拉斯·赵四</td>
+				<td>24</td>
+			</tr>
+			<tr>
+				<td>王五</td>
+				<td>w5w5</td>
+				<td>w5</td>
+				<td>15</td>
+			</tr>
+		</table>
+	</center>
+</body>
+</html>

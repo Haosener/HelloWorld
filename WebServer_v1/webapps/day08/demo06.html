@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.err{
+		color: red;
+	}
+	.ok{
+		color: green;
+	}
+</style>
+<script type="text/javascript">
+	function myfn(){
+		//创建正则
+		var reg = /^\w{6,10}$/;
+		
+		s1.className = 
+				reg.test(i1.value)?"ok":"err";
+		s2.className = 
+			reg.test(i2.value)?"ok":"err";
+	}
+	function fn1(){
+		var reg = /^\w{6,10}$/;
+		s1.className = 
+				reg.test(i1.value)?"ok":"err";
+	}
+	function fn2(){
+		var reg = /^\w{6,10}$/;
+		s2.className = 
+				reg.test(i2.value)?"ok":"err";
+	}
+</script>
+</head>
+<body>
+用户名：<input type="text" id="i1"
+			 onblur="fn1()">
+<span id="s1">6-10位数字、字母下划线</span><br>
+密码：<input type="password" id="i2"
+	 onblur="fn2()">
+<span id="s2">6-10位数字、字母下划线</span><br>
+<input type="button" value="校验"
+		 onclick="myfn()">
+
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function allfn(){
+		var items =
+			document.getElementsByClassName("item");
+		//让每一个多选框的状态和全选状态一致
+		for(var i=0;i<items.length;i++){
+			items[i].checked = c5.checked;
+		}
+		//统计
+		calfn();
+	}
+	function calfn(){
+		var items =
+			document.getElementsByClassName("item");
+		//统计总价
+		var total = 0;
+		for(var i=0;i<items.length;i++){
+			if(items[i].checked){
+				total+=parseInt(items[i].value);
+			}
+		}
+		total_p.innerText = "总价："+total+"元";
+	}
+</script>
+</head>
+<body>
+<h3>订单练习</h3>
+<input type="checkbox" id="c1" onclick="calfn()" class="item" value="20">
+<label for="c1">鼠标20元</label><br>
+<input type="checkbox" id="c2" onclick="calfn()" class="item" value="80">
+<label for="c2">键盘80元</label><br>
+<input type="checkbox" id="c3" onclick="calfn()" class="item" value="5000">
+<label for="c3">华为手机5000元</label><br>
+<input type="checkbox" id="c4" onclick="calfn()" class="item" value="3000">
+<label for="c4">苹果手机3000元</label><br>
+<input type="checkbox" id="c5" onclick="allfn()">
+<label for="c5">全选</label><br>
+<p id="total_p">总价：0元</p>
+</body>
+</html>
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	setTimeout(function(){
+		//模拟按钮的点击事件
+		$("input").trigger("click");
+	},3000);
+	$(function(){
+		$("span").hover(function(){//鼠标移入触发
+			$(this).css("color","red");
+		},function(){//鼠标移出触发
+			$(this).css("color","green");
+		});
+	});
+</script>
+</head>
+<body>
+<input type="button" value="按钮"
+	onclick="alert('xxx')"> 
+<span>span1</span>
+<span>span2</span>
+<span>span3</span>
+</body>
+</html>
+
+

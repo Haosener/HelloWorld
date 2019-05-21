@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//窗口点击事件
+	onclick = function(){
+		//alert("啦啦啦");
+	}
+ 
+	//页面加载完成事件
+	onload = function(){
+		i1.value = Math.random();
+	}
+	//每次页面获取焦点时执行
+	onfocus = function(){
+		console.log("获取焦点");
+	}
+	//每次离开页面失去焦点时执行
+	onblur = function(){
+		console.log("失去焦点"); 
+	}
+</script>
+</head>
+<body>
+<input type="text" id="i1">
+</body>
+</html>
+
+
+

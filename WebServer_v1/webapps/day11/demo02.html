@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	onload = function(){
+		//得到所有二层ul
+		var uls = 
+			document.getElementsByClassName("c1");
+		for(var i=0;i<uls.length;i++){
+			uls[i].style.display="none";
+		}
+	}
+	function myfn(li){
+		//通过li得到里面的ul
+		var ul =
+			li.getElementsByTagName("ul")[0];
+		//如果原来隐藏则显示 显示则隐藏
+		ul.style.display=
+			ul.style.display=="none"?"block":"none";
+		//让其它的二级ul隐藏
+		var uls = 
+			document.getElementsByClassName("c1");
+		for(var i=0;i<uls.length;i++){
+			//判断出点击ul以外的其它ul
+			if(uls[i]!=ul){
+				//让其隐藏
+				uls[i].style.display="none";
+			}
+		}
+	}
+</script>
+</head>
+<body>
+<ul>
+	<li onclick="myfn(this)">同事
+		<ul class="c1">
+			<li>马云</li>
+			<li>马化腾</li>
+			<li>刘强东</li>
+		</ul>
+	</li>
+	<li onclick="myfn(this)">亲戚
+		<ul class="c1">
+			<li>习大大</li>
+			<li>老干妈</li>
+			<li>马大姐</li>
+		</ul>
+	</li>
+	<li onclick="myfn(this)">女友们
+		<ul class="c1">
+			<li>貂蝉</li>
+			<li>西施</li>
+			<li>武则天</li>
+		</ul>
+	</li>
+</ul>
+</body>
+</html>

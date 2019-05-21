@@ -1,0 +1,55 @@
+<html>
+<table style="margin: 0 auto;">
+</table>
+<head>
+<meta charset="utf-8">
+<title>reg 测试页面</title>
+
+</head>
+<body>
+	<center>
+		<h1>欢迎注册</h1>
+		<!-- 
+			form 表单
+		 表单是用来将用户在页面中方输入的内容
+		 提交给服务端使用的。注意，只有被from
+		 标签包含的输入框的内容才会被提交。
+		 
+		 form表单有两个重要的属性：
+		 acction：用来指定该扁担提交的路径
+		 method：用来指定表单提交的方式
+		 
+		 method常用的值为：GET,POST
+		 GET:地址栏形式提交，表单数据会被拼接到
+		 	URL中提交给服务端
+		 POST：打包形式提交，内容会包含在请求的
+		 消息正文中，对于提交隐私数据或者上传附件
+		 操作时要使用这种方式提交
+		  -->
+		<form action="./reg" method="get">
+		<table border="1">
+			<tr>
+				<td>用戶名：</td>
+				<td><input name="username" type="text"></td>
+			</tr>
+			<tr>
+				<td>密碼</td>
+				<td><input name="password" type="password"></td>
+			</tr>
+			<tr>
+				<td>昵稱</td>
+				<td><input name="nickname" type="text"></td>
+			</tr>
+			<tr>
+				<td>年齡</td>
+				<td><input name="age" type="text"></td>
+			</tr>
+			<tr>
+				<td align="center" colspan="2"><input type="submit" value="注册">&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="重置"></td>
+			</tr>
+		</table>
+		</form>
+	</center>
+</body>
+
+</html>

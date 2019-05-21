@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div,img{
+		width: 200px;
+		height: 150px;
+	}
+	div{
+		position: relative;
+		overflow: hidden;
+	}
+	img{
+		position: absolute;
+	}
+</style>
+<script type="text/javascript">
+	onload = function(){
+		//得到所有的图片
+		var imgs = 
+			document.getElementsByTagName("img");
+		for(var i=0;i<imgs.length;i++){
+			imgs[i].style.left = i*200+"px";
+		}
+	}
+	//创建定时器调用换图片的方法
+	var timer = setInterval(changeImg,2000);
+	function changeImg(){
+		//开启移动图片的定时器
+		var moveTimer = setInterval(function(){
+			//得到所有图片
+			var imgs = 
+				document.getElementsByTagName("img");
+			for(var i=0;i<imgs.length;i++){
+				//得到原来left的值
+				var left = 
+						parseInt(imgs[i].style.left);
+				left-=4;
+				//判断图片移动完成
+				if(left<=-200){
+					left=400;
+					//停止定时器
+					clearInterval(moveTimer);
+				}
+				imgs[i].style.left = left+"px";
+			}
+		},10);
+	}
+	function stop(){
+		clearInterval(timer);
+	}
+	function start(){
+		stop();//关掉之前的
+		timer = setInterval(changeImg,2000);
+	}
+	onblur = function(){
+		stop();
+	}
+	onfocus = function(){
+		start();
+	}
+</script>
+</head>
+<body>
+<div onmouseover="stop()" 
+onmouseout="start()">
+	<img src="../imgs/a.jpg" >
+	<img src="../imgs/1.jpg">
+	<img src="../imgs/k.jpg">
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

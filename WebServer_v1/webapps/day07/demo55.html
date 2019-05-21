@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function myfn(){
+		//得到文本框和div
+		var i = document.getElementById("i1");
+		var d = document.getElementById("d1");
+		//取出文本框的文本给到div
+		if(isNaN(i1.value)){
+			d.innerText = "输入错误";
+			}else{
+				d.innerText = parseFloat(i.value)+parseFloat(i.value);
+			}
+		
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="i1"><br>
+	<input type="button" value="求和" onclick="myfn()">
+	<div id="d1"></div>
+</body>
+</html>

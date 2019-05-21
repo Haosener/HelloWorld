@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript"
+	 src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	/* jq中的页面加载完成事件 */
+	$(function(){
+		//alert("框架引入成功！");
+		$("#b1").click(function(){
+			//js对象和jq对象不一样 
+			//文本框的值  js   i1.value;
+			//jq   $("#i1").val();
+			alert($("#i1").val());
+		});
+	});
+	
+</script>
+</head>
+<body>
+<input type="button" value="按钮" id="b1">
+<input type="text" id="i1">
+</body>
+</html>
+
+
+

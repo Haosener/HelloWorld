@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var left = 0;
+	onclick = function(){
+		left+=10;
+		myimg.style.marginLeft=left+"px";
+	}
+	
+	setInterval(function(){
+		left+=1;
+		myimg.style.marginLeft=left+"px";
+	},10);
+	
+</script>
+</head>
+<body>
+<div id="d1">这周真 慢 长！</div>
+<img id="myimg" src="../imgs/2.gif">
+</body>
+</html>
+
+

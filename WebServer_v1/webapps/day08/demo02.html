@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div>div{
+		width: 20px;
+		height: 20px;
+		margin: 5px;
+		background-color: red;
+		display: inline-block;
+	}
+</style>
+<script type="text/javascript">
+	function myfn(){
+		//var i1 = document.getElementById("i1");
+		var row = i1.value;
+		var col = i2.value;
+		//遍历行
+		for(var j=0;j<row;j++){
+			//遍历每行的个数
+			for(var i=0;i<col;i++){
+				d1.innerHTML+="<div></div>";
+			}
+			//添加换行
+			d1.innerHTML+="<br>";
+		}
+		
+		
+	}
+</script>
+</head>
+<body>
+<input type="text" placeholder="请输入行数"
+	id="i1">
+<input type="text" placeholder="请输入列数"
+	id="i2">
+<input type="button" value="添加"
+		 onclick="myfn()">
+<div id="d1"></div>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div{
+		width: 20px;
+		height: 20px;
+		margin: 5px;
+		background-color: red;
+		display: inline-block;
+	}
+</style>
+<script type="text/javascript">
+	function myfn(){
+		for(var i=1;i<=10;i++){
+			for(var j=0;j<i;j++){
+				document.body.innerHTML+=
+						"<div></div>";
+			}
+			document.body.innerHTML+="<br>";
+		}
+	}
+</script>
+</head>
+<body>
+<input type="button" value="添加" onclick="myfn()">
+<hr>
+</body>
+</html>
+
+

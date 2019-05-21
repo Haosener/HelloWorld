@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body{
+		background-image: url("../zombimgs/bg1.jpg");
+		margin:0;
+		
+	}
+	img{
+		width: 60px;
+		height: 60px;
+		position: absolute;
+	}
+	#success_h3{
+		float: left;
+	}
+	#fail_h3{
+		float:right;
+	}
+	body{
+		overflow: hidden;
+	}
+</style>
+<script type="text/javascript">
+	var successCount=0;
+	var failCount=0;
+	
+	onload = function(){
+		changeBG();
+	}
+	//窗口尺寸改变事件
+	onresize = function(){
+		changeBG();
+	}
+	function changeBG(){
+		//获取窗口的宽高
+		var w = document.body.clientWidth;
+		var h = 
+			document.body.parentElement.clientHeight;
+		//alert(w+":"+h);
+		document.body.style.backgroundSize = 
+								w+"px "+h+"px";
+	}
+	//开启添加僵尸图片的定时器
+	setInterval(function(){
+		var zomb = 
+			document.createElement("img");
+		//设置显示图片
+		//           0        1      2               3   
+		//successCount 0-19    20-39   40-59 
+		var type = parseInt(successCount/20);
+		if(type>3){
+			type=3;
+		}
+ 		zomb.src="../zombimgs/zomb"+type+".png";
+		//设置僵尸位置
+		var w = document.body.clientWidth;
+		var h = 
+			document.body.parentElement.clientHeight;
+		
+		zomb.style.left=w+"px";
+		zomb.style.top= 
+			parseInt(Math.random()*(h-60))+"px";
+	
+		document.body.appendChild(zomb);
+		//给僵尸图片添加鼠标移入事件
+		zomb.onmouseover = function(){
+			//删除僵尸图片
+			document.body.removeChild(this);
+			//统计成功数量
+			successCount++;
+			success_h3.innerText =
+				"成功数量："+successCount;
+		}
+	},100);
+	
+	//再开启移动僵尸的定时器
+	var moveTimer = setInterval(function(){
+		//得到所有的僵尸图片
+		var imgs = 
+			document.getElementsByTagName("img");
+		for(var i=0;i<imgs.length;i++){
+			//得到原来的left值
+			var left = 
+				parseInt(imgs[i].style.left);
+			left-=1+parseInt(successCount/20);
+			imgs[i].style.left=left+"px";
+			//判断僵尸移出屏幕时删除僵尸图片
+			if(left<=0){
+				document.body.removeChild(imgs[i]);
+				
+				//统计失败数量
+				failCount++;
+				fail_h3.innerText =
+					"失败数量："+failCount;
+				if(failCount>=20){
+					alert("GameOver！");
+					//停止移动
+					clearInterval(moveTimer);
+					//删除所有僵尸
+					var arr = 
+						document.getElementsByTagName("img");
+					//得到僵尸的数量
+					var count = arr.length;
+					//有多少个僵尸就循环多少次
+					for(var j=0;j<count;j++){
+						//因为数组会放生改变 
+						//所以每次删除数组里面的第一个
+						document.body.removeChild(arr[0]);
+					}
+				}
+			}
+		}
+	},10);
+	
+</script>
+</head>
+<body>
+<h3 id="success_h3">成功数量：0</h3>
+<h3 id="fail_h3">失败数量：0</h3>
+</body>
+</html>
+
+
+

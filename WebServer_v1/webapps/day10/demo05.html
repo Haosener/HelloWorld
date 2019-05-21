@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	onclick = function(){
+		var d = document.createElement("div");
+		d.innerText = "啦啦啦";
+		d.style.color = "red";
+		//document.body.appendChild(d);
+		//插入到div2的前面
+		document.body.insertBefore(d,d2);
+	}
+	setTimeout(function(){
+		document.body.removeChild(d2);
+	},3000);
+</script>
+</head>
+<body>
+<div>div1</div>
+<div id="d2">div2</div>
+<div>div3</div>
+</body>
+</html>
+
+
+
+

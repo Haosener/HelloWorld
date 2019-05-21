@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#d1{
+		width: 300px;
+		height: 300px;
+		border: 1px solid red;
+	}
+	.red{
+		width: 100px;
+		height: 100px;
+		background-color: red;
+		float: left;
+	}
+	.blue{
+		width: 100px; 
+		height: 100px;
+		background-color: blue;
+		float: left;
+	}
+</style>
+<script type="text/javascript">
+	function myfn(){
+		var d = document.getElementById("d1");
+		//添加9个div
+		for(var i=0;i<9;i++){
+			//0 红 2 4 6 8
+			var color = i%2==0?"red":"blue";
+			d.innerHTML+=
+				"<div class='"+color+"'></div>";
+		}
+	}
+</script>
+</head>
+<body>
+<input type="button" value="添加"
+	 onclick="myfn()">
+<div id="d1"></div>
+</body>
+</html>
+
+

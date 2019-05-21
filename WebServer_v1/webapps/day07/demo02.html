@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//无参无返回值
+	function fn1(){
+		alert("fn1执行了");
+	}
+	/* 调用方法和Java一样 */
+	//fn1();
+	//有参无返回值
+	function fn2(name,age){
+		alert(name+":"+age);
+	}
+	//调用
+	//fn2("刘备",18);
+	
+	//无参有返回值
+	function fn3(){
+		return "abc";
+	}
+	/* var s = fn3();
+	alert(s); */
+	//有参有返回值
+	function fn4(x,y){
+		return x*y;
+	}
+/* 	var result = fn4(2,8);
+	alert(result); */
+	
+	/* 第二种格式： */
+	var fn5 = function (){
+		alert("fn5执行！");
+	}
+	//调用方式一样
+	//fn5();
+	
+	var fn6 = new Function("x","y","return x*y;");
+	//调用
+	var result = fn6(3,8);
+	alert(result);
+	
+</script>
+</head>
+<body>
+<input type="button" value="按钮" 
+		onclick="fn1()"> 
+</body>
+</html>
+
+
+
+
+
+
+
