@@ -11,7 +11,7 @@ window.onload=function () {
             if (gethi.readyState===4 && gethi.status===200) {
                 var Hi = JSON.parse(gethi.responseText);
                 hitokoto.innerHTML = Hi.hitokoto;
-                from.innerHTML = "from: <b>" + Hi.from + "</b>"; //可自定义输出格式
+                from.innerHTML = "-- <b>" + Hi.from + "</b>"; //可自定义输出格式
             }
         }
     }
